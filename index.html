@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Todo app</title>
+		<script src="./scripts/index.js" type="text/javascript" defer></script>
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="icon" type="image/png" href="./images/favicon.png" />
+	</head>
+	<body>
+		<header>
+			<h1>Todo App</h1>
+		</header>
+
+		<main>
+			<section class="form-sec">
+				<form id="todo-form" action="">
+					<h3>Add todo</h3>
+					<textarea></textarea>
+					<button>Add</button>
+				</form>
+			</section>
+			<section class="list-sec">
+				<div class="list-header">
+					<h3>Your Todos</h3>
+
+					<p>Pending: <span id="pending-count">0</span></p>
+					<p>Completed: <span id="completed-count">0</span></p>
+				</div>
+				<div id="list" class="todo-list">
+					<div class="todo-item">
+						<p class="todo-title">Sample Todo Item</p>
+						<p class="todo-status">
+							Status:
+							<span class="success">Completed</span>
+							<span class="warning">Pending</span>
+						</p>
+						<div class="todo-actions">
+							<button class="complete-btn">Mark as Complete</button>
+							<button class="delete-btn">Delete</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

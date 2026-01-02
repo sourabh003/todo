@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Outfit", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #6200ee;
+	color: white;
+	padding: 1rem;
+	text-align: center;
+}
+
+textarea,
+button {
+	font-family: "Outfit", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+main {
+	background: #e8eaf6;
+	height: 100vh;
+	width: 100vw;
+	box-sizing: border-box;
+
+	display: flex;
+
+	.form-sec {
+		width: 30%;
+
+		form {
+			background: white;
+			border-radius: 10px;
+			padding: 10px;
+
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+			textarea {
+				padding: 10px;
+				box-sizing: border-box;
+				font-size: 16px;
+				min-width: 100%;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+			}
+
+			button {
+				padding: 10px;
+				font-size: 16px;
+				background-color: #6200ee;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+
+				&:hover {
+					background-color: #3700b3;
+				}
+			}
+		}
+	}
+
+	.list-sec {
+		width: 70%;
+
+		.list-header {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.todo-list {
+			padding: 0;
+			margin-top: 10px;
+
+			.todo-item {
+				background: white;
+				margin-bottom: 10px;
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+				padding: 10px;
+				border-radius: 5px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+				.todo-title {
+					font-size: 18px;
+					font-weight: 500;
+					margin-bottom: 5px;
+				}
+
+				.todo-status {
+					.success {
+						color: green;
+					}
+					.warning {
+						color: orange;
+					}
+				}
+				.todo-actions {
+					margin-top: 10px;
+					button {
+						padding: 5px 10px;
+						border: none;
+						border-radius: 5px;
+						color: white;
+
+						&.delete-btn {
+							background-color: rgb(207, 111, 111);
+						}
+
+						&.complete-btn {
+							background-color: #6200ee;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	section {
+		padding: 10px;
+		box-sizing: border-box;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	main {
+		flex-direction: column;
+
+		.form-sec,
+		.list-sec {
+			width: 100%;
+		}
+	}
+}
