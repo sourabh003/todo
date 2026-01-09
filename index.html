@@ -17,30 +17,26 @@
 			<section class="form-sec">
 				<form id="todo-form" action="">
 					<h3>Add todo</h3>
-					<textarea></textarea>
+					<textarea id="todo-input"></textarea>
 					<button>Add</button>
 				</form>
 			</section>
 			<section class="list-sec">
-				<div class="list-header">
-					<h3>Your Todos</h3>
-
-					<p>Pending: <span id="pending-count">0</span></p>
-					<p>Completed: <span id="completed-count">0</span></p>
-				</div>
-				<div id="list" class="todo-list">
-					<div class="todo-item">
-						<p class="todo-title">Sample Todo Item</p>
-						<p class="todo-status">
-							Status:
-							<span class="success">Completed</span>
-							<span class="warning">Pending</span>
-						</p>
-						<div class="todo-actions">
-							<button class="complete-btn">Mark as Complete</button>
-							<button class="delete-btn">Delete</button>
-						</div>
+				<div class="sections">
+					<div class="sec-header">
+						<div>Pending</div>
+						<div id="pending-count">0</div>
 					</div>
+
+					<div class="sec-list" id="sec-pending"></div>
+				</div>
+				<div class="sections">
+					<div class="sec-header">
+						<div>Completed</div>
+						<div id="completed-count">0</div>
+					</div>
+
+					<div class="sec-list" id="sec-completed"></div>
 				</div>
 			</section>
 		</main>
