@@ -1,42 +1,5 @@
-let todos = [
-	{
-		id: 1,
-        title: "Learn JavaScript",
-        createdAt: "",
-		completed: false,
-	},
-	{
-		id: 2,
-		createdAt: "",
-        title: "Learn HTML",
-		completed: false,
-	},
-	{
-		id: 3,
-		createdAt: "",
-        title: "Learn CSS",
-		completed: false,
-	},
-	{
-		id: 4,
-		createdAt: "",
-        title: "Learn GO",
-		completed: false,
-	},
-	{
-		id: 5,
-		createdAt: "",
-        title: "Learn Rust",
-		completed: true,
-	},
-	{
-		id: 6,
-		createdAt: "",
-        title: "Learn Python",
-		completed: true,
-	},
-];
-
+// main array
+let todos = getTodos();
 const todoList = document.getElementById("list");
 
 const newTodoForm = document.getElementById("todo-form");
@@ -51,14 +14,15 @@ const completedCounter = document.getElementById("completed-count");
 newTodoForm.onsubmit = function (e) {
 	e.preventDefault();
 
-    createTodo(newTodoTitle.value)
-    newTodoTitle.value = ""
+	createTodo(newTodoTitle.value);
+	newTodoTitle.value = "";
 };
 
 function deleteTodo(id) {
 	const updatedTodos = todos.filter((todo) => todo.id !== id);
 	todos = updatedTodos;
-	showTodos(updatedTodos);
+    showTodos(updatedTodos);
+    saveTodos(todos)
 }
 
 function markComplete(id) {
@@ -69,17 +33,20 @@ function markComplete(id) {
 		return todo;
 	});
 	todos = updatedTodos;
-	showTodos(updatedTodos);
+    showTodos(updatedTodos);
+    saveTodos(todos)
 }
 
 function createTodo(title) {
 	let newTodo = {
 		id: todos.length + 1,
 		title,
-		complete: false,
+        complete: false,
+        createdAt: new Date()
 	};
 	todos.unshift(newTodo);
-	showTodos(todos);
+    showTodos(todos);
+    saveTodos(todos)
 }
 
 function showTodos(todos) {
@@ -96,7 +63,16 @@ function showTodos(todos) {
 		}
 	});
 
-	let pending = todos.length - completed;
+    let pending = todos.length - completed;
+    
+    if (pending === 0) {
+        pendingList.innerHTML = "No Todos"
+    }
+
+    if (completed === 0) {
+        completedList.innerHTML = "No Todos"
+    }
+
 
 	pendingCounter.innerText = pending;
 	completedCounter.innerText = completed;
@@ -107,7 +83,7 @@ function createTodoHtml(todo) {
         <div id="todo-${todo.id}" class="todo-item">
             <p class="todo-title">${todo.title}</p>
 
-            <p>Created at: </p>
+            <p>Created at: ${todo.createdAt}</p>
 
             <p class="todo-status">
                 Status:
@@ -136,7 +112,8 @@ function createTodoHtml(todo) {
                         </div>
                         <button onclick="deleteTodo(${todo.id})"  class="delete-btn">Delete</button>
                </div>
-            `}
+            `
+						}
 		</div>    
     `;
 }

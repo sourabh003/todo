@@ -1,0 +1,28 @@
+[
+	{
+		"id": "",
+		"userId": "",
+		"postType": "",
+		"createdAt": "",
+		"imageUrl": [""],
+		"caption": "",
+		"tags": [],
+		"music": "",
+		"collaborators": []
+	},
+
+	{
+		"id": "",
+		"videoUrl": "",
+		"title": "",
+		"description": "",
+		"channelId": "",
+		"createdAt": "",
+        "thumbnailUrl": "",
+        "views": 0,
+        "tags":[],
+		"sections": [{
+
+        }]
+	}
+]
